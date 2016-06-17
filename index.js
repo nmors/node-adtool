@@ -5,73 +5,65 @@ const fs = require('fs'),
       child_process = require('child_process');
 
 /** Config **/
-const adToolPath = './bin/linux/bin/adtool';
+const adToolPath = './bin/linux/bin/adtool',
+      defaultConfig = {
+	
+      };
 
+let cfg = defaultConfig;
 
 module.exports = {
+
+  config(config){
+    if(config){
+      cfg = config;
+    }
+    return cfg;
+  },
   
-  createUser(){
-    child_process.exec(adToolPath + ' useradd', function(){
+  createUser(username, path){
+    child_process.exec(adToolPath + ' useradd ' + username + ' ' + path, function(){
 	/** ... CREATE USER **/
     })
-  }
+  },
 
-  setPassword(){
-    child_process.exec(adToolPath + ' setpass', function(){
+  setPassword(username, password){
+    child_process.exec(adToolPath + ' setpass ' + username + ' ' + password, function(){
 	/** ... Set Password **/
     })
-  }
+  },
 
-  unlockUser(){
-    child_process.exec(adToolPath + ' unlock', function(){
+  unlockUser(username){
+    child_process.exec(adToolPath + ' unlock ' + username, function(){
 	/** ... Unlock User Account**/
     })
-  }
+  },
 
-  addUserToGroup(){
-    child_process.exec(adToolPath + ' groupadd', function(){
+  addUserToGroup(username, group){
+    child_process.exec(adToolPath + ' groupadd ' + group + ' ' + username, function(){
 	/** ... Add user to group **/
     })
-  }
+  },
 
-  setAttribute(){
-    child_process.exec(adToolPath + ' attributereplace', function(){
+  setAttribute(username, attribute, value){
+    child_process.exec(adToolPath + ' attributereplace ' + username + ' ' + attribute + ' ' + value, function(){
 	/** ... Set Attribute **/
     })
-  }
+  },
 
-  searchObjects(){
-    child_process.exec(adToolPath + ' list', function(){
+  searchObjects(path){
+    child_process.exec(adToolPath + ' list ' + path, function(){
 	/** ... AD List **/
     })
-  }
+  },
 
-   createOU(){
-    child_process.exec(adToolPath + ' oucreate', function(){
+  createOU(name, path){
+    child_process.exec(adToolPath + ' oucreate ' + name + ' ' + path, function(){
 	/** ... Create OU **/
     })
-  }
+  },
 
   
 }
 
 
-
-/**
-  ---------------
-   Example usage
-  ---------------
-	$adtool list ou=user,dc=example,dc=com
-	CN=allusers,OU=user,DC=example,DC=com
-	OU=finance,OU=user,DC=example,DC=com
-	OU=administration,OU=user,DC=example,DC=com
-
-	$adtool oucreate marketing ou=user,dc=example,dc=com
-	$adtool useradd jsmith ou=marketing,ou=user,dc=example,dc=com
-	$adtool setpass jsmith banana
-	$adtool unlock jsmith
-	$adtool groupadd allusers jsmith
-	$adtool attributereplace jsmith telephonenumber 123
-	$adtool attributereplace jsmith mail jsmith@example.com
-
-**/
