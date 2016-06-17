@@ -75,7 +75,7 @@ admod.createOU(ou, path)
 ### Credits
 
 
-As this is a wrapper utility for adtool, credits goto Mike Dawson ( mike _at_ no spam gp2x.org )
+As this is a wrapper utility for `adtool`, credits goto Mike Dawson ( mike _at_ no spam gp2x.org )
 
 His tool can be found at https://gp2x.org/adtool/
 
@@ -86,3 +86,5 @@ His tool can be found at https://gp2x.org/adtool/
 
 1. Create Pull Request
 2. Thanks!
+
+
