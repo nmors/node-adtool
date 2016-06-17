@@ -9,14 +9,14 @@ Node utility for modifying Active Directory
 ### Requiring
 
 ```js
-const admod = require('node-admod'); 
+const adtool = require('node-adtool'); 
 ```
 
 
 ### Configuring
 
 ```js
-admod.config = {
+adtool.config = {
   "username" : "",
   "password" : ""
 }; 
@@ -26,48 +26,48 @@ admod.config = {
 ### Creating Accounts
 
 ```js
-admod.createUser(username, path)
+adtool.createUser(username, path)
 ```
 
 ### Set Password
 
 ```js
-admod.setPassword(username, password)
+adtool.setPassword(username, password)
 ```
 
 
 ### Unlock a user account
 
 ```js
-admod.unlockUser(username)
+adtool.unlockUser(username)
 ```
 
 
 ### Add a user to a group
 
 ```js
-admod.addUserToGroup(username, group)
+adtool.addUserToGroup(username, group)
 ```
 
 
 ### Set an attribute to a user
 
 ```js
-admod.setAttribute(username, attribute, value)
+adtool.setAttribute(username, attribute, value)
 ```
 
 
 ### Search for a user
 
 ```js
-admod.searchObjects(path)
+adtool.searchObjects(path)
 ```
 
 
 ### Create an OU
 
 ```js
-admod.createOU(ou, path)
+adtool.createOU(ou, path)
 ```
 
 
