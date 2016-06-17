@@ -1,0 +1,19 @@
+{
+  "name": "node-adtool",
+  "version": "1.0.0",
+  "description": "Wrapper utility for creating active directory user accounts",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nmors/adtool.git"
+  },
+  "author": "Nathan Mors",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nmors/adtool/issues"
+  },
+  "homepage": "https://github.com/nmors/adtool#readme"
+}
