@@ -9,7 +9,7 @@ Node utility for modifying Active Directory
 ### Requiring
 
 ```js
-const adtool = require('node-adtool'); 
+const adtool = require('node-adtool')
 ```
 
 
@@ -19,7 +19,7 @@ const adtool = require('node-adtool');
 adtool.config = {
   "username" : "",
   "password" : ""
-}; 
+}
 ```
 
 
@@ -53,7 +53,7 @@ adtool.addUserToGroup(username, group)
 ### Set an attribute to a user
 
 ```js
-adtool.setAttribute(username, attribute, value)
+adtool.setAttrib(username, attribute, value)
 ```
 
 

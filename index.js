@@ -45,7 +45,7 @@ module.exports = {
     })
   },
 
-  setAttribute(username, attribute, value){
+  setAttrib(username, attribute, value){
     child_process.exec(adToolPath + ' attributereplace ' + username + ' ' + attribute + ' ' + value, function(){
 	/** ... Set Attribute **/
     })
